@@ -1,0 +1,15 @@
+body{
+    text-align: center;
+    background-color: aqua;
+    font-family: 'Kanit', 'Arial';
+}
+select, input{
+    border-radius: 5px;
+    width: 150px;
+}
+input[type=submit]{
+    background-color: #4CAF50;
+    color: white;
+    width: 150px;
+    height: 40px;
+}

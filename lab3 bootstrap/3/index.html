@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise 3</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: palegreen;
+        }
+        .block{
+            border: 3px solid blue;
+            margin: auto auto auto auto; 
+        }
+        button{
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+        }
+    </style>
+</head>
+<script type="text/javascript">
+    var image_letter = 'a';
+        function changepic(){
+            var image = document.getElementById('image1');
+            var image2 = document.getElementById('image2');
+            var image3 = document.getElementById('image3');
+            var image4 = document.getElementById('image4');
+            if (image_letter == 'a'){
+                image.src = '3.png';
+                image2.src = '1.png';
+                image3.src = '4.png';
+                image4.src = '2.png';
+                image_letter = 'b';
+            }
+            else if(image_letter == 'b'){
+                image.src = '4.png';
+                image2.src = '3.png';
+                image3.src = '2.png';
+                image4.src = '1.png';
+                image_letter = 'c';
+            }
+            else if(image_letter == 'c'){
+                image.src = '2.png';
+                image2.src = '4.png';
+                image3.src = '1.png';
+                image4.src = '3.png';
+                image_letter = 'd';
+            }
+            else if (image_letter == 'd'){
+                image.src = '1.png';
+                image2.src = '2.png';
+                image3.src = '3.png';
+                image4.src = '4.png';
+                image_letter = 'a';
+            }
+        }
+    </script>
+<body>
+    <div class="block">
+    <img id="image1" src="1.png">
+    <img id="image2" src="2.png">
+    <br>
+    <img id="image3" src="3.png">
+    <img id="image4" src="4.png">
+    </div>
+    <br><br>
+    <button onclick="changepic()">CHANGE!!!</button>
+</body>
+</html>

@@ -1,0 +1,14 @@
+th, td{
+    border-bottom: 2px solid green;
+    font-size: 22pt;
+}
+table{
+    border-collapse: collapse;
+}
+body{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    font-size: 30pt;
+}

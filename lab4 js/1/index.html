@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lab 4/1</title>
+</head>
+<body>
+    <p>Value 1 : <input type="text" id="num"></p>
+    <p>Value 2 : <input type="text" id="num2"></p>
+    <button type="button" name="Calculate" onclick="total()">Calculate</button>
+    <p id="show">Result : 0</p>
+</body>
+<script>
+    function total(){
+        var num1 = document.getElementById("num").value;
+        var num2 = document.getElementById("num2").value;
+        var total = parseInt(num1)+parseInt(num2);
+        if ((num1 == "" && num2 == "") || num1 == "" || num2 == "")
+            document.getElementById("show").innerHTML = "Result : 0";
+        else
+            document.getElementById("show").innerHTML = "Result : "+total;
+    }
+</script>
+</html>

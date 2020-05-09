@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>4</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let requestURL = 'superheroes.json';
+    let request = new XMLHttpRequest();
+    request.onreadystatechange = function () 
+    { 
+        if (request.readyState == 4 && request.status == 200)
+        { 
+            var myJSON = JSON.parse(request.responseText); 
+            myFunction(myJSON); 
+        } 
+    }; 
+    request.open("GET", requestURL, true);
+    request.send();
+    function myFunction(obj){
+        var stat = "-"
+        if (obj.active == true){
+            stat = "Available"
+        }
+        else{
+            stat = "Unavailable"
+        }
+        document.write("<center><h1><---- "+obj.squadName+" ----></h1>")
+        document.write("<b>est.</b>"+obj.formed)
+        document.write(" || <b>Address</b> : "+obj.secretBase+", "+obj.homeTown)
+        document.write(" || <b>STATUS</b> : "+stat+"</center><hr>")
+        for(var i=0;i < obj.members.length;i++)
+        {
+            document.write('<center> <b>Name</b> : '+obj.members[i].name+'<br>')
+            document.write('<b>Age</b> : '+obj.members[i].age+'<br>')
+            document.write('<b>Secret Identity</b> : '+obj.members[i].secretIdentity+'<br>')
+            document.write('<b>Power</b> ')
+            for (var j=0;j < obj.members[i].powers.length ;j++)
+            {
+                document.write('- '+": "+obj.members[i].powers[j]+'<br>')
+            }
+            document.write('----------------------------------------------<br></center>')
+        }
+    }
+</script>
+</html>

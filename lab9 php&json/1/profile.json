@@ -1,0 +1,33 @@
+[
+    {
+        "firstname": "Kittipot",
+        "lastname": "Laorngsri",
+        "age": 20,
+        "health": [
+            {
+                "height": [
+                    {
+                        "as": [
+                            173
+                        ]
+                    }
+                ],
+                "weight": 70
+            }
+        ],
+        "gender": "male",
+        "tel": "080-8100950",
+        "id": 1
+    },
+    {
+        "firstname": "Thanachot",
+        "lastname": "Lamnuang",
+        "age": 20,
+        "health": {
+            "height": 163,
+            "weight": 59
+        },
+        "gender": "female",
+        "id": 2
+    }
+]

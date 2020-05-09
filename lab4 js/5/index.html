@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lab 4/5</title>
+</head>
+<body>
+    <p id="text">Web Technology</p>
+    <button type="button" id="increase" onclick="fontbig()">Font [+]</button>
+    <button type="button" id="decrease" onclick="fontsmall()">Font [-]</button>
+    <button type="button" id="cincrease" onclick="changecolorfront()">Color [+]</button>
+    <button type="button" id="cdecrease" onclick="changecolorback()">Color [-]</button>
+</body>
+<script>
+    var color_font = 0;
+    function changecolorfront(){
+       color_font++;
+       if (color_font == 0){
+            document.getElementById("text").style.color = "blue";
+       }
+       else if (color_font == 1){
+            document.getElementById("text").style.color = "yellow";
+       }
+       else if (color_font == 2){
+            document.getElementById("text").style.color = "green";
+       }
+       else if (color_font == 3){
+            document.getElementById("text").style.color = "aqua";
+       }
+       else{
+          document.getElementById("text").style.color = "blue";
+          color_font = 0;
+       }
+    }
+    function changecolorback(){
+     color_font--;
+       if (color_font == 0){
+            document.getElementById("text").style.color = "aqua";
+       }
+       else if (color_font == 1){
+            document.getElementById("text").style.color = "green";
+       }
+       else if (color_font == 2){
+            document.getElementById("text").style.color = "yellow";
+       }
+       else if (color_font == 3){
+            document.getElementById("text").style.color = "blue";
+       }
+       else{
+          document.getElementById("text").style.color = "blue";
+          color_font = 3;
+       }
+    }
+    var num = 12;
+    function fontbig(){
+        num += 4;
+        document.getElementById("text").style.fontSize = num+"pt";
+    }
+    function fontsmall(){
+        num -= 4;
+        document.getElementById("text").style.fontSize = num+"pt";
+        if (num == 0)
+          num = 4;
+    }
+</script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lab 4/6</title>
+</head>
+
+
+    <body>
+        <h1>เพิ่มผลไม้</h1>
+        <button type="button" onclick="banana()">กล้วย</button>
+        <button type="button" onclick="orange()">ส้ม</button>
+        <button type="button" onclick="watermelon()">แตงโม</button>
+        <button type="button" onclick="grape()">องุ่น</button>
+        <hr>
+        <p id="pic"></p>
+    </body>
+    <script>
+        var x = 0;
+        function banana(){
+            x++;
+            var mypic = new Image(100,100);
+            mypic.src = 'f1.png';
+            document.getElementById("pic").appendChild(mypic);
+            if (x == 5){
+                document.getElementById("pic").innerHTML += "<br>";
+                x = 0;
+            }
+        }
+        function orange(){
+            x++;
+            var mypic = new Image(100,100);
+            mypic.src = 'f2.png';
+            document.getElementById("pic").appendChild(mypic);
+            if (x == 5){
+                document.getElementById("pic").innerHTML += "<br>";
+                x = 0;
+            }
+        }
+        function watermelon(){
+            x++;
+            var mypic = new Image(100,100);
+            mypic.src = 'f3.png';
+            document.getElementById("pic").appendChild(mypic);
+            if (x == 5){
+                document.getElementById("pic").innerHTML += "<br>";
+                x = 0;
+            }
+        }
+        function grape(){
+            x++;
+            var mypic = new Image(100,100);
+            mypic.src = 'f4.png';
+            document.getElementById("pic").appendChild(mypic);
+            if (x == 5){
+                document.getElementById("pic").innerHTML += "<br>";
+                x = 0;
+            }
+        }
+    </script>
+
+</html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employee>
+    <human id = "1">
+        <title>Ms.</title>
+        <lastname>Davolio</lastname>
+        <firstname>Nancy</firstname>
+        <jobtitle>Sales Representative</jobtitle>
+        <address>507-20th Ave. E. Apt. 2A</address>
+    </human>
+    <human id = "2">
+        <title>Mr.</title>
+        <lastname>Fuller</lastname>
+        <firstname>Andrew</firstname>
+        <jobtitle>Vice President,Sales</jobtitle>
+        <address>908 W. Capital Way</address>
+    </human>
+    <human id = "3">
+        <title>Ms.</title>
+        <lastname>Leverling</lastname>
+        <firstname>Janet</firstname>
+        <jobtitle>Sales Representative</jobtitle>
+        <address>722 Moss Bay Blvd.</address>
+    </human>
+    <human id = "4">
+        <title>Mrs.</title>
+        <lastname>Peacock</lastname>
+        <firstname>Margaret</firstname>
+        <jobtitle>Sales Representative</jobtitle>
+        <address>4110 Old Redmond Rd.</address>
+    </human>
+    <human id = "5">
+        <title>Mr.</title>
+        <lastname>Buchanan</lastname>
+        <firstname>Steven</firstname>
+        <jobtitle>Sales Manager</jobtitle>
+        <address>14 Garrett Hill</address>
+    </human>
+    <human id = "6">
+        <title>Mr.</title>
+        <lastname>Suyama</lastname>
+        <firstname>Michael</firstname>
+        <jobtitle>Sales Representative</jobtitle>
+        <address>Conventry House Miner Rd.</address>
+    </human>
+    <human id = "7">
+        <title>Mr.</title>
+        <lastname>King</lastname>
+        <firstname>Robert</firstname>
+        <jobtitle>Sales Representative</jobtitle>
+        <address>Edgeham Hollow Winchester Way</address>
+    </human>
+    <human id = "8">
+        <title>Ms.</title>
+        <lastname>Callahan</lastname>
+        <firstname>Laura</firstname>
+        <jobtitle>Inside Sales Coordinator</jobtitle>
+        <address>4726 - 11th Ave. N.E.</address>
+    </human>
+    <human id = "9">
+        <title>Ms.</title>
+        <lastname>Dodsworth</lastname>
+        <firstname>Anne</firstname>
+        <jobtitle>Sales Representative</jobtitle>
+        <address>7 Houndstooth Rd.</address>
+    </human>
+</employee>

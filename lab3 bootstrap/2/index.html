@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="1.css">
+    <title>Information Form</title>
+</head>
+<body>
+    <script>
+        function checkid(){
+            var number = document.forms["checkform"]["id"].value;
+            var title = document.forms["checkform"]["title"].value;
+            var name = document.forms["checkform"]["name"].value;
+            var sname = document.forms["checkform"]["sname"].value;
+            var add1 = document.forms["checkform"]["address1"].value;
+            var add2 = document.forms["checkform"]["address2"].value;
+            var point = document.forms["checkform"]["point"].value;
+            var city = document.forms["checkform"]["city"].value;
+            var province = document.forms["checkform"]["province"].value;
+            var postcode = document.forms["checkform"]["postcode"].value;
+            var tel = document.forms["checkform"]["tel"].value;
+            if (isNaN(number) || number.length != 13)
+            {
+                alert("- หมายเลขบัตรประชาชนต้องเป็นตัวเลข 13 หลัก");
+                return false;
+            }
+            if (title == "stater"){
+                alert("เลือกคำนำหน้าชื่อ");
+                return false;
+            }
+            if (name.length > 20 || name.length < 2 || !isNaN(name))
+            {
+                alert("- ชื่อต้องเป็นตัวอักษรและต้องมีความยาว 2-20 ตัวอักษร");
+                return false;
+            }
+            if (sname.length > 20 || sname.length < 2 || !isNaN(sname)){
+                alert("- นามสกุลต้องเป็นตัวอักษรและต้องมีความยาว 2-30 ตัวอักษร");
+                return false;
+            }
+            if (add1.length < 5 || add2.length < 5 || !isNaN(city)){
+                alert("- ที่อยู่ต้องเป็นตัวอักษรและต้องมีความยาว 5 ตัวอักษรขึ้นไป");
+                return false;
+            }
+            if (point.length < 2 || !isNaN(point)){
+                alert("ตำบลต้องมีความยาวอย่างน้อย 2 ตัวอักษรขึ้นไป");
+                return false;
+            }
+            if (!isNaN(city)){
+                alert("อำเภอเป็นตัวอักษร");
+                return false;
+            }
+            if (province == "0"){
+                alert("เลือกจังหวัด");
+                return false;
+            }
+            if (postcode.length != 5 || isNaN(postcode)){
+                alert("รหัสไปรษณีย์ต้องมีตัวเลข 5 หลัก");
+                return false;
+            }
+            if ((tel.length != 9 && tel.length != 10) || isNaN(tel)){
+                alert("หมายเลขโทรศัพท์มีตัวเลข 9 หรือ 10 หลัก");
+                return false;
+            }
+                
+        }
+    </script>
+    <!---->
+    <h1>ลงทะเบียน</h1>
+    <hr>
+    <p>หมายเลขบัตรประชาชน</p>
+    <form name="checkform" onsubmit="return checkid()" method="POST">
+        <input type="text" name="id">
+    <p>คำนำหน้า</p>
+    <select name="title">
+        <option value="stater">[คำนำหน้า]</option>
+        <option value="1">นาย</option>
+        <option value="2">นาง</option>
+        <option value="3">นางสาว</option>
+        <option value="4">เด็กชาย</option>
+        <option value="5">เด็กหญิง</option>
+    </select>
+    <p>ชื่อ</p>
+    <input type="text" name="name">
+    <p>นามสกุล</p>
+    <input type="text" name="sname">
+    <p>ที่อยู่</p>
+    <input type="text" name="address1"><br>
+    <input type="text" name="address2">
+    <p>ตำบล</p>
+    <input type="text" name="point">
+    <p>อำเภอ</p>
+    <input type="text" name="city">
+    <p>จังหวัด</p>
+    <select name="province">
+            <option value="0">[จังหวัด]</option>
+            <option value="1">กรุงเทพมหานคร</option>
+            <option value="2">เชียงใหม่</option>
+            <option value="3">นครราชสีมา</option>
+            <option value="4">กาญจนบุรี</option>
+            <option value="5">สุราษฎร์ธานี</option>
+        </select>
+    <p>รหัสไปรษณีย์</p>
+    <input type="text" name="postcode">
+    <p>เบอร์โทรศัพท์</p>
+    <input type="text" name="tel"><br><br>
+    <input type="submit" value="submit" name="submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+body{
+    color: white;
+    background-color: rgb(190, 156, 221);
+}
+.one{
+    width:100px;
+    background-color: blue;
+}
+.two{
+    width:100px;
+    background-color: blue;
+}
+.three{
+    width:100px;
+    background-color: blue;
+}
+.four{
+    width:100px;
+    background-color: blue;
+}
+.five{
+    width:100px;
+    background-color: blue;
+}
+.block{
+    margin: auto auto auto 500px;
+    padding: 5px;
+}
+h1{
+    text-align: center;
+}

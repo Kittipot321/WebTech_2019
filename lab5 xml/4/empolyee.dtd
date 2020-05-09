@@ -1,0 +1,10 @@
+<!DOCTYPE employee
+[
+<!ELEMENT employee (human,title,lastname,firstname,jobtitle,address)>
+<!ELEMENT human (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT lastname (#PCDATA)>
+<!ELEMENT firstname (#PCDATA)>
+<!ELEMENT jobtitle (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+]>

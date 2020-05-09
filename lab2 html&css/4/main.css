@@ -1,0 +1,30 @@
+#line1{
+    background-color: red;
+    width: 250px;
+    padding : 5px;
+}
+#line2{
+    background-color: blue;
+    width: 350px;
+    padding : 5px;
+}
+#line3{
+    background-color: darkgreen;
+    width: 220px;
+    padding : 5px;
+}
+#line4{
+    background-color: gray;
+    width: 310px;
+    padding : 5px;
+}
+#line5{
+    background-color: green;
+    width: 290px;
+    padding : 5px;
+}
+body{
+    color: white;
+    font-size: 14pt;
+    font-family: Arial, Helvetica, sans-serif
+}

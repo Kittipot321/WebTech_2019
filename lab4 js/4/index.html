@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lab 4/4</title>
+</head>
+<body>
+</body>
+<script>
+        var body = document.getElementsByTagName("body")[0];
+        var table = document.createElement("table");
+        var tablebody = document.createElement("tbody");
+        table.appendChild(tablebody);
+        for (var i = 1;i<9;i++){
+            var tr = document.createElement("tr");
+            tablebody.appendChild(tr);
+            for (var j=1;j<9;j++){
+                var td = document.createElement("td");
+                if (i%2 != j%2){
+                    td.style.backgroundColor = "black";
+                }
+                td.style.width = "100px";
+                td.style.height = "100px";
+                table.style.backgroundColor = "white";
+                tr.appendChild(td);
+        }}
+        body.style.marginLeft = "250px";
+        body.appendChild(table);
+    </script>
+</html>

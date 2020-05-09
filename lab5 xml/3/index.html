@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lab 5/2</title>
+</head>
+
+<body>
+    <script>
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                xmlShow(this);
+            }
+        };
+        xhttp.open("GET", "employee.xml", true);
+        xhttp.send();
+        function xmlShow(xml) {
+            let xmlDoc = xml.responseXML;
+            let edt = xmlDoc.getElementsByTagName("human");
+            let country = ["USA","Thailand","Australia","Italy","Vietnam","UK","China","India","Russia"];
+            for (let i = 0; i < edt.length; i++) {
+                let newEle = xmlDoc.createElement("country");
+                let newText = xmlDoc.createTextNode(country[i]);
+                newEle.appendChild(newText);
+                edt[i].appendChild(newEle);
+            }
+            let txt = "";
+            let tit = xmlDoc.getElementsByTagName("title");
+            let last = xmlDoc.getElementsByTagName("lastname");
+            let first = xmlDoc.getElementsByTagName("firstname");
+            let job = xmlDoc.getElementsByTagName("jobtitle");
+            let add = xmlDoc.getElementsByTagName("address");
+            let coun = xmlDoc.getElementsByTagName("country");
+
+            for (let i = 0; i < tit.length; i++) {
+                txt += (i+1)+" ";
+                txt += tit[i].childNodes[0].nodeValue + " ";
+                txt += last[i].childNodes[0].nodeValue + " ";
+                txt += first[i].childNodes[0].nodeValue + " (";
+                txt += job[i].childNodes[0].nodeValue + "), ";
+                txt += "<i>"+add[i].childNodes[0].nodeValue+"</i>"+", ";
+                txt += coun[i].childNodes[0].nodeValue + "<br>";
+
+            }
+            document.write(txt);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Lab 5 with boolstrap</title>
+</head>
+<body>
+    <script>
+        function checkid(){
+            var number = document.forms["checkform"]["id"].value;
+            var title = document.forms["checkform"]["title"].value;
+            var name = document.forms["checkform"]["name"].value;
+            var sname = document.forms["checkform"]["sname"].value;
+            var add1 = document.forms["checkform"]["address1"].value;
+            var add2 = document.forms["checkform"]["address2"].value;
+            var point = document.forms["checkform"]["point"].value;
+            var city = document.forms["checkform"]["city"].value;
+            var province = document.forms["checkform"]["province"].value;
+            var postcode = document.forms["checkform"]["postcode"].value;
+            var tel = document.forms["checkform"]["tel"].value;
+            if (isNaN(number) || number.length != 13)
+            {
+                alert("- หมายเลขบัตรประชาชนต้องเป็นตัวเลข 13 หลัก");
+                return false;
+            }
+            if (title == "stater"){
+                alert("เลือกคำนำหน้าชื่อ");
+                return false;
+            }
+            if (name.length > 20 || name.length < 2 || !isNaN(name))
+            {
+                alert("- ชื่อต้องเป็นตัวอักษรและต้องมีความยาว 2-20 ตัวอักษร");
+                return false;
+            }
+            if (sname.length > 20 || sname.length < 2 || !isNaN(sname)){
+                alert("- นามสกุลต้องเป็นตัวอักษรและต้องมีความยาว 2-30 ตัวอักษร");
+                return false;
+            }
+            if (add1.length < 5 || add2.length < 5 || !isNaN(city)){
+                alert("- ที่อยู่ต้องเป็นตัวอักษรและต้องมีความยาว 5 ตัวอักษรขึ้นไป");
+                return false;
+            }
+            if (point.length < 2 || !isNaN(point)){
+                alert("ตำบลต้องมีความยาวอย่างน้อย 2 ตัวอักษรขึ้นไป");
+                return false;
+            }
+            if (!isNaN(city)){
+                alert("อำเภอเป็นตัวอักษร");
+                return false;
+            }
+            if (province == "0"){
+                alert("เลือกจังหวัด");
+                return false;
+            }
+            if (postcode.length != 5 || isNaN(postcode)){
+                alert("รหัสไปรษณีย์ต้องมีตัวเลข 5 หลัก");
+                return false;
+            }
+            if ((tel.length != 9 && tel.length != 10) || isNaN(tel)){
+                alert("หมายเลขโทรศัพท์มีตัวเลข 9 หรือ 10 หลัก");
+                return false;
+            }
+                
+        }
+    </script>
+    <!---->
+    <div class="container text-center col-7">
+    <nav class="navbar navbar-dark-flex-column bg-primary">
+    <h1 class="text-white text-center">ลงทะเบียน</h1>
+    </nav>
+    <hr color="red" width="500">
+    <div class="row justify-content-md-center">
+    <div class="form-group text-center col-6">
+    <label for="id">หมายเลขบัตรประชาชน</label>
+    <form name="checkform" onsubmit="return checkid()" method="POST">
+        <input type="text" name="id" class="form-control form-control-sm">
+    </div></div>
+    <div class="row justify-content-md-center">
+    <div class="form-group col-3">
+    <p>คำนำหน้า</p>
+    <select name="title" class="form-control form-control-sm">
+        <option value="stater">[คำนำหน้า]</option>
+        <option value="1">นาย</option>
+        <option value="2">นาง</option>
+        <option value="3">นางสาว</option>
+        <option value="4">เด็กชาย</option>
+        <option value="5">เด็กหญิง</option>
+    </select>
+    </div></div>
+    <div class="form-row">
+        <div class="col">
+    <p>ชื่อ</p>
+    <input type="text" name="name" class="form-control form-control-sm">
+    </div>
+    <div class="col">
+    <p>นามสกุล</p>
+    <input type="text" name="sname" class="form-control form-control-sm">
+    </div></div>
+    <p>ที่อยู่</p>
+    <input type="text" name="address1" class="form-control form-control-sm">
+    <input type="text" name="address2" class="form-control form-control-sm">
+    <div class="form-row row justify-content-md-center">
+        <div class="col-3">
+    <p>ตำบล</p>
+    <input type="text" name="point" class="form-control form-control-sm">
+        </div>
+        <div class="col-3">
+    <p>อำเภอ</p>
+    <input type="text" name="city" class="form-control form-control-sm">
+        </div></div>
+    <div class="form-row row justify-content-md-center">
+        <div class="col col-lg-3">
+    <p>จังหวัด</p>
+    <select name="province" class="form-control form-control-sm">
+      <option value="0">[จังหวัด]</option>
+      <option value="กรุงเทพมหานคร">กรุงเทพมหานคร</option>
+      <option value="กระบี่">กระบี่ </option>
+      <option value="กาญจนบุรี">กาญจนบุรี </option>
+      <option value="กาฬสินธุ์">กาฬสินธุ์ </option>
+      <option value="กำแพงเพชร">กำแพงเพชร </option>
+      <option value="ขอนแก่น">ขอนแก่น</option>
+      <option value="จันทบุรี">จันทบุรี</option>
+      <option value="ฉะเชิงเทรา">ฉะเชิงเทรา </option>
+      <option value="ชัยนาท">ชัยนาท </option>
+      <option value="ชัยภูมิ">ชัยภูมิ </option>
+      <option value="ชุมพร">ชุมพร </option>
+      <option value="ชลบุรี">ชลบุรี </option>
+      <option value="เชียงใหม่">เชียงใหม่ </option>
+      <option value="เชียงราย">เชียงราย </option>
+      <option value="ตรัง">ตรัง </option>
+      <option value="ตราด">ตราด </option>
+      <option value="ตาก">ตาก </option>
+      <option value="นครนายก">นครนายก </option>
+      <option value="นครปฐม">นครปฐม </option>
+      <option value="นครพนม">นครพนม </option>
+      <option value="นครราชสีมา">นครราชสีมา </option>
+      <option value="นครศรีธรรมราช">นครศรีธรรมราช </option>
+      <option value="นครสวรรค์">นครสวรรค์ </option>
+      <option value="นราธิวาส">นราธิวาส </option>
+      <option value="น่าน">น่าน </option>
+      <option value="นนทบุรี">นนทบุรี </option>
+      <option value="บึงกาฬ">บึงกาฬ</option>
+      <option value="บุรีรัมย์">บุรีรัมย์</option>
+      <option value="ประจวบคีรีขันธ์">ประจวบคีรีขันธ์ </option>
+      <option value="ปทุมธานี">ปทุมธานี </option>
+      <option value="ปราจีนบุรี">ปราจีนบุรี </option>
+      <option value="ปัตตานี">ปัตตานี </option>
+      <option value="พะเยา">พะเยา </option>
+      <option value="พระนครศรีอยุธยา">พระนครศรีอยุธยา </option>
+      <option value="พังงา">พังงา </option>
+      <option value="พิจิตร">พิจิตร </option>
+      <option value="พิษณุโลก">พิษณุโลก </option>
+      <option value="เพชรบุรี">เพชรบุรี </option>
+      <option value="เพชรบูรณ์">เพชรบูรณ์ </option>
+      <option value="แพร่">แพร่ </option>
+      <option value="พัทลุง">พัทลุง </option>
+      <option value="ภูเก็ต">ภูเก็ต </option>
+      <option value="มหาสารคาม">มหาสารคาม </option>
+      <option value="มุกดาหาร">มุกดาหาร </option>
+      <option value="แม่ฮ่องสอน">แม่ฮ่องสอน </option>
+      <option value="ยโสธร">ยโสธร </option>
+      <option value="ยะลา">ยะลา </option>
+      <option value="ร้อยเอ็ด">ร้อยเอ็ด </option>
+      <option value="ระนอง">ระนอง </option>
+      <option value="ระยอง">ระยอง </option>
+      <option value="ราชบุรี">ราชบุรี</option>
+      <option value="ลพบุรี">ลพบุรี </option>
+      <option value="ลำปาง">ลำปาง </option>
+      <option value="ลำพูน">ลำพูน </option>
+      <option value="เลย">เลย </option>
+      <option value="ศรีสะเกษ">ศรีสะเกษ</option>
+      <option value="สกลนคร">สกลนคร</option>
+      <option value="สงขลา">สงขลา </option>
+      <option value="สมุทรสาคร">สมุทรสาคร </option>
+      <option value="สมุทรปราการ">สมุทรปราการ </option>
+      <option value="สมุทรสงคราม">สมุทรสงคราม </option>
+      <option value="สระแก้ว">สระแก้ว </option>
+      <option value="สระบุรี">สระบุรี </option>
+      <option value="สิงห์บุรี">สิงห์บุรี </option>
+      <option value="สุโขทัย">สุโขทัย </option>
+      <option value="สุพรรณบุรี">สุพรรณบุรี </option>
+      <option value="สุราษฎร์ธานี">สุราษฎร์ธานี </option>
+      <option value="สุรินทร์">สุรินทร์ </option>
+      <option value="สตูล">สตูล </option>
+      <option value="หนองคาย">หนองคาย </option>
+      <option value="หนองบัวลำภู">หนองบัวลำภู </option>
+      <option value="อำนาจเจริญ">อำนาจเจริญ </option>
+      <option value="อุดรธานี">อุดรธานี </option>
+      <option value="อุตรดิตถ์">อุตรดิตถ์ </option>
+      <option value="อุทัยธานี">อุทัยธานี </option>
+      <option value="อุบลราชธานี">อุบลราชธานี</option>
+      <option value="อ่างทอง">อ่างทอง </option>
+        </select>
+    </div>
+        <div class="col-2">
+    <p>รหัสไปรษณีย์</p>
+    <input type="text" name="postcode" class="form-control form-control-sm">
+        </div>
+        <div class="col-3">
+    <p>เบอร์โทรศัพท์</p>
+    <input type="text" name="tel" class="form-control form-control-sm">
+        </div>
+    </div><br>
+    <input type="submit" value="Submit" name="submit" class="btn btn-success mb-2 btn-block">
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ลงทะเบียนร่วมงาน</h1>
+    <input type="text" id="id" placeholder="รหัสนักศึกษา">
+    <input type="text" id="names" placeholder="ชื่อ">
+    <input type="text" id="surname" placeholder="นามสกุล">
+    <button type="button" onclick="run()">ลงทะเบียน</button>
+    <hr>
+    <table>
+        <thead id = "reg" align="center">
+            <th>ลำดับที่</th>
+            <th>รหัสนักศึกษา</th>
+            <th>ชื่อ</th>
+            <th>นามสกุล</th>
+        </thead>
+    </table>
+</body>
+<script>
+    var num = 1;
+    function run()
+    {
+        var Mytable = document.getElementById("reg");
+        var newRow = Mytable.insertRow(-1);
+        var ranknum = newRow.insertCell(0);
+        var idcell = newRow.insertCell(1); 
+        var namecell = newRow.insertCell(2);
+        var snamecell = newRow.insertCell(3);
+        var ids = document.getElementById("id").value;
+        var namess = document.getElementById("names").value;
+        var sname = document.getElementById("surname").value;
+        ranknum.innerHTML = num;
+        idcell.innerHTML = ids;
+        namecell.innerHTML = namess;
+        snamecell.innerHTML = sname;
+        num++;
+    }
+</script>
+
+</html>
+<!-- ข้อสอบ 2 ส่วน
+    1. lecture 
+    2. lab -->

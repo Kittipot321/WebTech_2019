@@ -1,0 +1,53 @@
+body{
+    font-family: 'Kanit', 'Arial',sans-serif;
+    animation-name: example;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+}
+.font{
+    margin-left: 15%;
+    font-size: 16pt;
+}
+.pic{
+    width: 250px;
+    height: 250px;
+    margin: 1% 10% auto 25%;
+    border: 5px solid white;
+    border-radius: 50%;
+    float: left;
+}
+
+h1{
+    text-align: center; 
+    margin-top: 1px;
+    color : yellow;
+}
+hr{
+    background-color:red;
+    height: 3px;
+}
+@keyframes example
+{
+    0% {background-color: rgb(174, 174, 235);
+        color: black;}
+    25% {background-color: yellowgreen;
+        color: black;}
+    50% {background-color: rgb(230, 84, 79);
+        color: black;}
+    75% {background-color: greenyellow;
+        color: black;}
+    100% {background-color: rgb(174, 174, 235);
+        color: black;}
+}
+.btt{
+    text-align: center;
+}
+.fb, .line, .tel{
+    width: 20px;
+    height: 20px;
+}
+.book{
+    width: 25px;
+    height: 25px;
+    margin-right: 1%;
+}
